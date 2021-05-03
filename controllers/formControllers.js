@@ -26,6 +26,14 @@ function formControllers(){
                 return res.json({message:'failed',err})
             })
         },
+        addAppointment(req,res){
+            return res.render('user/addAppointment')
+        },
+        saveAppointment(req,res){
+            console.log(req.body);
+            // const { start,end,day}=
+        }
+       
     }
 }
 
