@@ -6,7 +6,11 @@ function formControllers(){
             return res.render('user/registration')
         },
         saveCompany(req,res){
+            console.log('hh',req.body)
             const {name,address,city,state,zip,phone,website,email} = req.body
+            if(!name || !address || !city || !state || !zip || !phone || !website || !email){
+                return res.json({message:"All fields are required"})
+            }
             db.get().collection('companies').insertOne({
                 name,
                 address,

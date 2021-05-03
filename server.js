@@ -10,9 +10,10 @@ var dotenv=require('dotenv').config()
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.use('/', usersRouter);
+
 app.use(express.static('public'))
 app.use(express.json())
+
 
 db.connect((err)=>{
     if(err){
@@ -23,6 +24,7 @@ db.connect((err)=>{
   })
   
 
+app.use('/', usersRouter);
 
 app.listen(PORT,()=>{
     console.log('server running on ',PORT);
