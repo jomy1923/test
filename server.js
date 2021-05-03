@@ -12,6 +12,7 @@ app.set('view engine', 'hbs');
 
 app.use('/', usersRouter);
 app.use(express.static('public'))
+app.engine('hbs',hbs({extname: '.hbs',defaultLayout:'layout',layoutDir:__dirname+'/views/layouts/'}));
 
 
 db.connect((err)=>{
