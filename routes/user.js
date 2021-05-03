@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
+const formControllers = require('../controllers/formControllers')
 
-router.get('/get',(req,res)=>{ 
-    res.render('user/registration') 
-})
 
+
+router.get('/addCompany',formControllers().init)
+router.post('/addCompany',formControllers().saveCompany)
 
 
 
