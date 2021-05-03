@@ -12,7 +12,7 @@ app.set('view engine', 'hbs');
 
 app.use('/', usersRouter);
 app.use(express.static('public'))
-
+app.use(express.json())
 
 db.connect((err)=>{
     if(err){
